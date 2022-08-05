@@ -40,12 +40,12 @@ const EditKid = ({ getKid, updateKid, kid }) => {
   const [dob, setDob] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [alertState, setAlertState] = useState({
-    open: false,
+    openAlert: false,
     vertical: "top",
     horizontal: "center",
   });
 
-  const { vertical, horizontal, open } = alertState;
+  const { vertical, horizontal, openAlert } = alertState;
 
   const { id } = useParams();
 
@@ -63,20 +63,16 @@ const EditKid = ({ getKid, updateKid, kid }) => {
       setDob("");
       setSubmitted(true);
       setAlertState({
-        open: true,
+        openAlert: true,
         ...{ vertical: "top", horizontal: "center" },
       });
-      //handleAlertOpen({ vertical: "top", horizontal: "center" });
-      /* return <Redirect to="/dashboard" />; */
     }
   };
 
-  const handleAlertOpen = (newState) => () => {
-    setAlertState({ open: true, ...newState });
-  };
+  console.log(`openAlert ${openAlert}`);
 
   const handleAlertClose = () => {
-    setAlertState({ ...alertState, open: false });
+    setAlertState({ ...alertState, openAlert: false });
   };
 
   useEffect(() => {
@@ -106,7 +102,9 @@ const EditKid = ({ getKid, updateKid, kid }) => {
         <form
           autoComplete="off"
           style={{ marginTop: "2em" }}
-          onSubmit={(e) => handleSubmit(e)}
+          onSubmit={(e) => {
+            handleSubmit(e);
+          }}
         >
           <Grid item style={{ marginBottom: "2em" }}>
             <FormControl variant="outlined" fullWidth>
@@ -176,29 +174,32 @@ const EditKid = ({ getKid, updateKid, kid }) => {
       </Grid>
     );
   } else {
-    return (
-      <React.Fragment>
-        <Redirect to="/dashboard" />
-        <Snackbar
-          anchorOrigin={{ vertical, horizontal }}
-          open={open}
-          autoHideDuration={6000}
-          onClose={handleAlertClose}
-          key={vertical + horizontal}
-        >
-          <Alert
-            style={{ fontWeight: 900 }}
-            variant="filled"
+    if (openAlert) {
+      return (
+        <>
+          <Redirect to="/dashboard" />
+          <Snackbar
+            anchorOrigin={{ vertical, horizontal }}
+            open={openAlert}
+            autoHideDuration={6000}
             onClose={handleAlertClose}
-            severity="success"
+            key={vertical + horizontal}
           >
-            update was successful
-          </Alert>
-        </Snackbar>
-      </React.Fragment>
-    );
+            <Alert
+              style={{ fontWeight: 900 }}
+              variant="filled"
+              onClose={handleAlertClose}
+              severity="success"
+            >
+              update was successful
+            </Alert>
+          </Snackbar>
+        </>
+      );
+    }
   }
 };
+
 EditKid.propTypes = {
   getKid: PropTypes.func.isRequired,
   updateKid: PropTypes.func.isRequired,

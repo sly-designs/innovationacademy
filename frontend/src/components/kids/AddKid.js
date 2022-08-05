@@ -13,6 +13,8 @@ import OutlinedInput from "@material-ui/core/OutlinedInput";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from "@material-ui/lab/Alert";
 
 const useStyles = makeStyles((theme) => ({
   addChildButton: {
@@ -53,6 +55,13 @@ const AddKid = ({ open, handleClose, addKid, kid }) => {
   const [fullname, setFullname] = useState("");
   const [dob, setDob] = useState(formatDateToString());
   const [submitted, setSubmitted] = useState(false);
+  const [alertState, setAlertState] = useState({
+    openAlert: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+
+  const { openAlert, vertical, horizontal } = alertState;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -66,7 +75,15 @@ const AddKid = ({ open, handleClose, addKid, kid }) => {
       setFullname("");
       setDob(formatDateToString());
       setSubmitted(!submitted);
+      setAlertState({
+        openAlert: true,
+        ...{ vertical: "top", horizontal: "center" },
+      });
     }
+  };
+
+  const handleAlertClose = () => {
+    setAlertState({ ...alertState, openAlert: false });
   };
 
   if (!submitted) {
@@ -182,7 +199,26 @@ const AddKid = ({ open, handleClose, addKid, kid }) => {
       </React.Fragment>
     );
   } else {
-    return <Redirect to="/dashboard" />;
+    return (
+      <>
+        <Redirect to="/dashboard" />
+        <Snackbar
+          anchorOrigin={{ vertical, horizontal }}
+          open={openAlert}
+          autoHideDuration={6000}
+          onClose={handleAlertClose}
+          key={vertical + horizontal}
+        >
+          <Alert
+            style={{ fontWeight: 900 }}
+            variant="filled"
+            severity="success"
+          >
+            child added succesfully
+          </Alert>
+        </Snackbar>
+      </>
+    );
   }
 };
 

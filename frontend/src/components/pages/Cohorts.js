@@ -18,6 +18,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
+import Snackbar from "@material-ui/core/Snackbar";
+import Alert from "@material-ui/lab/Alert";
 
 import coderkids from "../../assets/coder-kids.png";
 import youngcoders from "../../assets/young-coders.png";
@@ -79,6 +81,21 @@ const Cohorts = ({
   const [kidName, setKidName] = useState("");
   const [kidAge, setKidAge] = useState(0);
   const [enrolled, setEnrolled] = useState(false);
+  const [alertState, setAlertState] = React.useState({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+
+  const { vertical, horizontal, open } = alertState;
+
+  const handleAlertOpen = (newState) => () => {
+    setAlertState({ open: true, ...newState });
+  };
+
+  const handleAlertClose = () => {
+    setAlertState({ ...alertState, open: false });
+  };
 
   const handleChange = (event) => {
     setKidName(event.target.value);
@@ -113,11 +130,14 @@ const Cohorts = ({
       cohort_id,
     };
 
-    console.log(enrolledKid);
     enrollKid(enrolledKid);
     setKidName("");
     setKidAge(0);
     setEnrolled(true);
+    handleAlertOpen({
+      vertical: "top",
+      horizontal: "center",
+    });
   };
 
   useEffect(() => {
@@ -322,9 +342,9 @@ const Cohorts = ({
                         <Grid container justifyContent="center">
                           <Grid item>
                             <Button
-                              onClick={(e) =>
-                                handleEnrollKid(e, programme[0].id, cohort.id)
-                              }
+                              onClick={(e) => {
+                                handleEnrollKid(e, programme[0].id, cohort.id);
+                              }}
                               variant="contained"
                               color="primary"
                               disabled={
@@ -350,7 +370,29 @@ const Cohorts = ({
       </Grid>
     );
   } else {
-    return <Redirect to="/dashboard" />;
+    if (open) {
+      return (
+        <>
+          <Redirect to="/dashboard" />
+          <Snackbar
+            anchorOrigin={{ vertical, horizontal }}
+            open={open}
+            autoHideDuration={6000}
+            onClose={handleAlertClose}
+            key={vertical + horizontal}
+          >
+            <Alert
+              style={{ fontWeight: 900 }}
+              variant="filled"
+              onClose={handleAlertClose}
+              severity="success"
+            >
+              enrolled!
+            </Alert>
+          </Snackbar>
+        </>
+      );
+    }
   }
 };
 

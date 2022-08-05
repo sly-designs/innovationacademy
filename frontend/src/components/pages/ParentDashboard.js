@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 650,
   },
 }));
-const ParentDashboard = ({ kids, programmes, cohorts }) => {
+const ParentDashboard = ({ kids, programmes, cohorts, success }) => {
   // const state = useSelector((state) => state.auth);
   const classes = useStyles();
   const [openAddChild, setOpenAddChild] = useState(false);
@@ -147,6 +147,7 @@ const ParentDashboard = ({ kids, programmes, cohorts }) => {
 const mapStateToProps = (state) => ({
   user: state.auth.user,
   kids: state.kidsreducer.kids,
+  success: state.kidsreducer.success,
   programmes: state.programmesReducer.programmes,
   cohorts: state.programmesReducer.cohorts,
 });

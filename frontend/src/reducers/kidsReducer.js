@@ -11,7 +11,6 @@ import {
 const initialState = {
   kids: null,
   kid: null,
-  error: null,
 };
 
 export const kidsReducer = (state = initialState, action) => {
@@ -23,7 +22,6 @@ export const kidsReducer = (state = initialState, action) => {
         ...action.payload,
         kids: null,
         kid: null,
-        error: action.payload,
       };
 
     case GET_ALL_KIDS:

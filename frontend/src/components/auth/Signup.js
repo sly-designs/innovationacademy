@@ -165,7 +165,7 @@ export const Signup = ({
                   type="text"
                   value={fullname}
                   onChange={(event) => setFullname(event.target.value)}
-                  labelWidth={105}
+                  labelWidth={95}
                   required
                 />
                 <FormHelperText id="fullname"></FormHelperText>
@@ -183,7 +183,7 @@ export const Signup = ({
                   type="text"
                   value={email}
                   onChange={onValidation}
-                  labelWidth={70}
+                  labelWidth={55}
                   required
                 />
                 <FormHelperText id="email">
@@ -201,7 +201,7 @@ export const Signup = ({
                   onChange={(event) => {
                     setPhone(event.target.value);
                   }}
-                  labelWidth={105}
+                  labelWidth={65}
                   required
                 />
                 <FormHelperText id="phone"></FormHelperText>
@@ -229,7 +229,7 @@ export const Signup = ({
                       </IconButton>
                     </InputAdornment>
                   }
-                  labelWidth={105}
+                  labelWidth={100}
                   required
                 />
                 <FormHelperText id="password">
@@ -249,7 +249,7 @@ export const Signup = ({
                   onChange={(event) => {
                     setPassword2(event.target.value);
                   }}
-                  labelWidth={200}
+                  labelWidth={190}
                   required
                 />
                 <FormHelperText id="confirmpassword"></FormHelperText>
