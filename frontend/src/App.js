@@ -10,6 +10,15 @@ import Dashboard from "./components/pages/ParentDashboard";
 import EditKid from "./components/kids/EditKid";
 import Programmes from "./components/pages/Programmes";
 import Cohorts from "./components/pages/Cohorts";
+import about from "./components/pages/About";
+import contact from "./components/pages/Contact";
+ 
+//changes
+
+//imported about and contact
+//added their path
+//On component/pages I added some files for the contact and about
+//all new dependencies added to package.json
 
 const App = () => {
   const [value, setValue] = useState();
@@ -21,12 +30,8 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/programmes" component={Programmes} />
-          <Route exact path="/about" component={() => <div>About Us</div>} />
-          <Route
-            exact
-            path="/contact"
-            component={() => <div>Contact Us</div>}
-          />
+          <Route exact path="/about" component={about} />
+          <Route exact path="/contact" component={contact} />
           <ParentPrivateRoute exact path="/dashboard" component={Dashboard} />
           <ParentPrivateRoute
             exact
