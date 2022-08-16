@@ -53,6 +53,7 @@ const AboutPageStyles = styled.div`
   .para {
     max-width: 100%;
   }
+  
 }
 .right {
   img {

@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Poppins",
     fontSize: "1.5rem",
     fontWeight: 700,
+    whiteSpace: 'nowrap',
     [theme.breakpoints.down("md")]: {
       fontSize: "1.5rem",
     },
@@ -95,12 +96,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   tabContainer: {
-    marginLeft: "200px",
+    marginLeft: "20px",
   },
   tab: {
     ...theme.typography.tab,
     minWidth: 15,
-    marginLeft: "75px",
+    marginLeft: "25px",
   },
   authButtonContainer: {
     marginLeft: "auto",
