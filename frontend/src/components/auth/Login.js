@@ -114,24 +114,24 @@ export const Login = ({
               paddingLeft: matchesXS
                 ? 0
                 : matchesSM
-                ? "2em"
+                ? "1em"
                 : matchesMD
-                ? "2    em"
-                : "5em",
+                ? "1    em"
+                : "1em",
               paddingRight: matchesXS
                 ? 0
                 : matchesSM
-                ? "2em"
+                ? "1em"
                 : matchesMD
-                ? "2em"
-                : "5em",
+                ? "1em"
+                : "1em",
             },
           }}
         >
           <DialogContent>
-            <Grid container direction="column">
+            <Grid direction="column">
               <Grid item>
-                <Typography align="center" variant="h4" gutterBottom>
+                <Typography align="center" variant="h5" gutterBottom>
                   Login
                 </Typography>
               </Grid>

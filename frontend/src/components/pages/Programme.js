@@ -55,17 +55,17 @@ const Programme = ({ classes, programme, isAuthenticated, childId }) => {
             }
           />
           <CardContent>
-            <Typography align="center" gutterBottom variant="h4">
+            <Typography align="center" gutterBottom variant="h5">
               {programme.title}
             </Typography>
             <Grid container className={classes.tagsContainer}>
               <Grid item className={classes.ageContainer}>
-                <Typography align="center" variant="subtitle1">
+                <Typography align="center" variant="h5">
                   {`Age ${programme.minAge}-${programme.maxAge}`}
                 </Typography>
               </Grid>
               <Grid item className={classes.priceContainer}>
-                <Typography align="center" variant="subtitle1">
+                <Typography align="center" variant="h5">
                   {`Price: Ksh. ${programme.price}`}
                 </Typography>
               </Grid>

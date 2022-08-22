@@ -12,7 +12,7 @@ import heroImage from "../../assets/herosection.png";
 
 const useStyles = makeStyles((theme) => ({
   heroTextContainer: {
-    marginLeft: "10%",
+    marginLeft: "3%",
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
     },
@@ -22,14 +22,15 @@ const useStyles = makeStyles((theme) => ({
   },
   joinButton: {
     fontFamily: "Poppins",
-    fontSize: "2rem",
+    fontSize: "1rem",
     textTransform: "none",
-    height: 70,
-    width: 250,
+    height: 50,
+    width: 200,
     borderRadius: 10,
   },
   programmesContainer: {
-    marginBottom: "5em",
+    marginTop: "3.5rem",
+    marginBottom: "5rem",
   },
 }));
 
@@ -40,7 +41,7 @@ const LandingPage = () => {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Grid container direction="column">
-      <Grid item style={{ marginTop: "8%" }}>
+      <Grid item style={{ marginTop: "4%" }}>
         <Grid
           container
           alignItems="center"
@@ -50,7 +51,7 @@ const LandingPage = () => {
           <Grid item className={classes.heroTextContainer} sm>
             <Typography
               variant="h2"
-              style={{ marginBottom: "25px" }}
+              style={{ marginBottom: "20px" }}
               align={matchesMD ? "center" : undefined}
             >
               Enrich children with

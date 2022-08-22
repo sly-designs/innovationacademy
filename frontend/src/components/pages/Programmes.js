@@ -11,7 +11,8 @@ import Programme from "./Programme";
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    maxWidth: 600,
+    maxWidth: 400,
+    height: 750,
     background: "#fff",
     border: `2px solid ${theme.palette.grey[400]}`,
     borderRadius: 10,
@@ -40,15 +41,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
   },
   enrollButton: {
-    fontSize: "1.5rem",
+    fontSize: "1.1rem",
     fontFamily: "Poppins",
     textTransform: "none",
     marginLeft: "5px",
-    marginBottom: "20px",
+    marginBottom: "15px",
     borderRadius: 8,
     borderWidth: 3,
-    height: "55px",
-    width: "170px",
+    height: "50px",
+    width: "150px",
     [theme.breakpoints.down("sm")]: {
       fontSize: "1rem",
       height: "45px",

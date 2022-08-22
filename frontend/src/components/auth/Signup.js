@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: theme.palette.common.blue,
     marginRight: "45px",
     height: "45px",
-    width: "125px",
+    width: "100px",
 
     [theme.breakpoints.down("sm")]: {
       fontSize: "1rem",
@@ -126,22 +126,22 @@ export const Signup = ({
       PaperProps={{
         style: {
           borderRadius: 10,
-          paddingTop: matchesXS ? "1em" : "5em",
-          paddingBottom: matchesXS ? "1em" : "5em",
+          paddingTop: matchesXS ? "1em" : "1em",
+          paddingBottom: matchesXS ? "1em" : "1em",
           paddingLeft: matchesXS
             ? 0
             : matchesSM
-            ? "2em"
+            ? "1em"
             : matchesMD
-            ? "2em"
-            : "4em",
+            ? "1em"
+            : "1em",
           paddingRight: matchesXS
             ? 0
             : matchesSM
-            ? "2em"
+            ? "1em"
             : matchesMD
-            ? "2em"
-            : "4em",
+            ? "1em"
+            : "1em",
         },
       }}
     >
