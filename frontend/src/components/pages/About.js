@@ -9,13 +9,19 @@ import {Link} from 'react-router-dom';
 
 
 
+
 const AboutPageStyles = styled.div`   
  padding: 2rem 0 10rem 0;
  .top-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
+ }
+ .top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
  }
  button {
   font-size: 2rem;
@@ -26,15 +32,19 @@ const AboutPageStyles = styled.div`
   border-radius: 8px;
   cursor: pointer;
   background-color: blue;
+  color: white;
 }
  .left {
-  flex: 3;
+  flex: 4;
   background-color: white;
   align-items: center;
+  margin-left: 2rem;
+  margin-top: 2rem;
  }
  .right {
-  flex: 2;
+  flex: 3;
   background-color: white;
+  margin-top: 2rem;
  }
  .about__subheading {
   font-size: 2.2rem;
@@ -66,17 +76,16 @@ const about = () => {
   return (
     <AboutPageStyles>
       <div className="container">
-        <div className="top-section">
-          <div className="left">
-            <p className="about__subheading">
+      <div className="top">
+        <p className="about__subheading">
              Who we <span>Are...</span>
             </p>
-            <h2 className="about__heading">
-            Why Innovation Academy
-            </h2>
+            </div>
+        <div className="top-section">
+          <div className="left">
             <div className="about__info">
             <PText>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 500 }}>
             <CardContent>
               iEARN Kenya Innovation Academy introduces education 4.0 that offers
         an opportunity for studious beginners and experts whose goal is to become professional.
@@ -86,7 +95,7 @@ const about = () => {
               </PText>
               <br /> <br />
               <PText>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 500 }}>
             <CardContent>
               Coding Mentors from iEARN will take training through a range of competency based learning activities
               that aim to introduce them to Coding and creativity.
@@ -95,7 +104,7 @@ const about = () => {
               </PText>
               <br /> <br />
               <PText>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 500 }}>
             <CardContent>
               Coding will teach and expose the trainees to an iterative approach to solving problems and testing out ideas. 
               Computational and design thinking is an important skill in a world where human relations are increasingly dependent on technology.
@@ -103,9 +112,6 @@ const about = () => {
               </Card>
               </PText>
             </div>
-            <Link to="/contact">
-            <button btnText="Contact Us">Contact Us</button>
-            </Link>
           </div>
           <div className="right">
           <Card sx={{ maxWidth: 500 }}>
@@ -121,6 +127,9 @@ const about = () => {
             </Card>
           </div>
         </div>
+        <Link to="/contact">
+            <button btnText="Contact Us">Contact Us</button>
+            </Link>
       </div>
     </AboutPageStyles>
   );

@@ -72,8 +72,8 @@ const Programmes = ({ getProgrammes, programmes, isAuthenticated }) => {
           Our programes & classes
         </Typography>
         <Typography variant="subtitle1" align="center">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-          consequatur quis vitae temporibus quaerat cumque eum.
+          At Innovation Academy, we have the best curriculum for your children. Enroll
+          now and be part of our tech journey.
         </Typography>
         <Typography variant="subtitle1" align="center">
           Select a program to view the available cohorts

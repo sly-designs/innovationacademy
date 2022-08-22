@@ -210,7 +210,7 @@ const Header = (props) => {
         activeIndex: 2,
       },
       {
-        name: "Contact Us",
+        name: "Contact",
         link: "/contact",
         activeIndex: 3,
       },

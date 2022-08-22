@@ -40,6 +40,7 @@ button {
     padding: 1rem 2rem;
     border-radius: 8px;
     cursor: pointer;
+    color: white;
 }
 `;
 
