@@ -18,17 +18,40 @@ const AboutPageStyles = styled.div`
   justify-content: center;
   gap: 1rem;
  }
+ .top-section::after{
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 50%;
+  background-color: white;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 768px) {
+  .top-section {
+      flex-direction: column;
+  }
+  .left,
+  .right{ 
+      max-width: 100%;
+  }
+  .right{
+      padding: 4rem 2rem 2rem 2rem;
+  }
+}
  .top{
   display: flex;
   align-items: center;
   justify-content: center;
  }
  button {
-  font-size: 2rem;
+  font-size: 1rem;
+  fontFamily: Poppins;
   display: inline-block;
   outline: none;
   border: none;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 8px;
   cursor: pointer;
   background-color: blue;
@@ -44,7 +67,7 @@ const AboutPageStyles = styled.div`
  .right {
   flex: 3;
   background-color: white;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
  }
  .about__subheading {
   font-size: 2.2rem;
@@ -67,7 +90,7 @@ const AboutPageStyles = styled.div`
 }
 .right {
   img {
-    border: 2px solid;
+    border: 10px solid;
   }
 }
 `;

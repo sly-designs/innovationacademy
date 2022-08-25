@@ -125,6 +125,8 @@ export const Signup = ({
       fullWidth
       PaperProps={{
         style: {
+          width: '30%',
+          height: '80%',
           borderRadius: 10,
           paddingTop: matchesXS ? "1em" : "1em",
           paddingBottom: matchesXS ? "1em" : "1em",
@@ -148,16 +150,16 @@ export const Signup = ({
       <DialogContent>
         <Grid container direction="column">
           <Grid item>
-            <Typography align="center" variant="h4">
+            <Typography align="center" variant="h5">
               Sign up
             </Typography>
             <Typography variant="subtitle1" align="center" gutterBottom>
               Sign up today and register your <br />
-              kid to start learning.
+              child to start learning.
             </Typography>
           </Grid>
           <form autoComplete="off" onSubmit={(e) => handleSubmit(e)}>
-            <Grid item style={{ marginBottom: "2em" }}>
+            <Grid item style={{ marginBottom: "1em" }}>
               <FormControl variant="outlined" fullWidth>
                 <InputLabel htmlFor="fullname">Fullname</InputLabel>
                 <OutlinedInput
@@ -171,7 +173,7 @@ export const Signup = ({
                 <FormHelperText id="fullname"></FormHelperText>
               </FormControl>
             </Grid>
-            <Grid item style={{ marginBottom: "2em" }}>
+            <Grid item style={{ marginBottom: "1em" }}>
               <FormControl
                 error={emailHelper.length !== 0}
                 variant="outlined"
@@ -191,7 +193,7 @@ export const Signup = ({
                 </FormHelperText>
               </FormControl>
             </Grid>
-            <Grid item style={{ marginBottom: "2em" }}>
+            <Grid item style={{ marginBottom: "1em" }}>
               <FormControl variant="outlined" fullWidth>
                 <InputLabel htmlFor="phone">Phone</InputLabel>
                 <OutlinedInput
@@ -207,7 +209,7 @@ export const Signup = ({
                 <FormHelperText id="phone"></FormHelperText>
               </FormControl>
             </Grid>
-            <Grid item style={{ marginBottom: "1.5em" }}>
+            <Grid item style={{ marginBottom: "1em" }}>
               <FormControl variant="outlined" fullWidth>
                 <InputLabel htmlFor="password">Password</InputLabel>
                 <OutlinedInput
@@ -237,7 +239,7 @@ export const Signup = ({
                 </FormHelperText>
               </FormControl>
             </Grid>
-            <Grid item style={{ marginBottom: "2em" }}>
+            <Grid item style={{ marginBottom: "1em" }}>
               <FormControl variant="outlined" fullWidth>
                 <InputLabel htmlFor="confirmpassword">
                   Confirm Password
@@ -259,7 +261,7 @@ export const Signup = ({
               item
               container
               direction="row"
-              style={{ marginTop: "1.5em" }}
+              style={{ marginTop: "1em" }}
               alignItems="center"
             >
               <Grid item>

@@ -14,12 +14,12 @@ padding-top: 0rem;
     margin-bottom:  1rem;
 }
 label {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 input,
 textarea {
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding: 1.2rem;
     color: black;
     background-color: #D3D3D3;
@@ -27,9 +27,10 @@ textarea {
     border: none;
     border-radius: 8px;
     margin-top: 1rem;
+    margin-left: 1rem;
 }
 textarea {
-    min-height: 150px;
+    min-height: 80px;
     resize: vertical;
 }
 button {
@@ -71,7 +72,7 @@ export default function ContactForm() {
 
   return (
     <>
-    <Card sx={{ maxWidth: 450 }}>
+    <Card sx={{ maxWidth: 400 }}>
       <CardContent>
         <FormStyle onSubmit={sendEmail}>
           <div className="form-group">

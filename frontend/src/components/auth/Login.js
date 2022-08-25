@@ -105,9 +105,10 @@ export const Login = ({
           aria-labelledby="simple-dialog-title"
           open={open}
           onClose={handleClose}
-          fullWidth
+          //maxWidth="400px"
           PaperProps={{
             style: {
+              width: '30%',
               borderRadius: 10,
               paddingTop: matchesXS ? "1em" : "0.5",
               paddingBottom: matchesXS ? "1em" : "5em",

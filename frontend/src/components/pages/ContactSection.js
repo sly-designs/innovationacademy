@@ -22,10 +22,10 @@ padding: 2rem 0;
     position: absolute;
     content: '';
     width: 2px;
-    height: 50%;
+    height: 80%;
     background-color: blue;
     left: 50%;
-    top: 30%;
+    top: 45%;
     transform: translate(-50%, -50%);
 }
 .left{
