@@ -97,6 +97,7 @@ const AddKid = ({ open, handleClose, addKid, kid }) => {
           fullWidth
           PaperProps={{
             style: {
+              width: '30%',
               borderRadius: 10,
               paddingTop: matchesXS ? "1em" : "0.5",
               paddingBottom: matchesXS ? "1em" : "5em",
